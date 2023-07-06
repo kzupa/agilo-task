@@ -1,11 +1,23 @@
 import Image from 'next/image'
 import { fetchProducts } from '@/utils';
+import { ProductCard } from '@/components';
 
-
-export default async function Home() {
-  const allProducts = await fetchProducts();
-
-  return (
-    <p>{ JSON.stringify(allProducts)}</p>
-  )
-}
+  export default async function Home() {
+    const allProducts = await fetchProducts();
+  
+    const renderProductCards = () => {
+      if (allProducts.length === 0) {
+        return <p>Loading...</p>;
+      }
+  
+      return allProducts.map((product) => (
+        <ProductCard key={product.id} product={product} />
+      ));
+    };
+    
+    return (
+      <div className='w-full items-center grid grid-cols-3 gap-20 p-20'>
+        {renderProductCards()}
+      </div>
+    );
+  }
