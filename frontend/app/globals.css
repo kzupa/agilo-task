@@ -4,15 +4,15 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-start-rgb: 241, 241, 241;
+  --background-end-rgb: 241, 241, 241;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-start-rgb: 241, 241, 241;
+    --background-end-rgb: 241, 241, 241;
   }
 }
 
@@ -24,4 +24,26 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+
+.rotating-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s ease-in-out;
+}
+
+.rotate-div {
+  transform: rotateY(180deg);
+}
+
+.rotated-button {
+  transform: rotateY(180deg);
+  padding-right: auto;
+}
+
+.rotating-text{
+  padding: 8px 0;
 }
