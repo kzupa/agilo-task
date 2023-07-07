@@ -25,3 +25,25 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+
+.rotating-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s ease-in-out;
+}
+
+.rotate-div {
+  transform: rotateY(180deg);
+}
+
+.rotated-button {
+  transform: rotateY(180deg);
+  padding-right: auto;
+}
+
+.rotating-text{
+  padding: 8px 0;
+}
