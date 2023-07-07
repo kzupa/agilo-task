@@ -16,7 +16,7 @@ import { ProductCard } from '@/components';
     };
     
     return (
-      <div className='w-full items-center grid grid-cols-3 gap-20 p-20'>
+      <div className='bg-light-gray relative items-center grid lg:grid-cols-4 md:grid-cols-2 gap-20 p-20'>
         {renderProductCards()}
       </div>
     );

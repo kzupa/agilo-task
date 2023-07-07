@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const Header: React.FC = () => {
   return (
-    <header className="bg-gray-800 py-4">
+    <header className="bg-midnight py-4">
       <nav className='max-w-[1440px] mx-auto flex justify-between items-center sm:px-16 px-6 py-4'>
 				<Image 
 					src='/jellyfish.png'
