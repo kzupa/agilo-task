@@ -47,3 +47,7 @@ body {
 .rotating-text{
   padding: 8px 0;
 }
+
+.modal-wrapper{
+  background-color: rgba(50, 50, 50, 0.4);
+}
