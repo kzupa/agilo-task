@@ -2,22 +2,15 @@
 
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-import { Button } from '@/components';
-
-interface ProductCardProps {
-    product: {
-      description: string;
-      thumbnail: string;
-      title: string;
-    };
-  }
+import { Button, ProductShow } from '@/components';
   
-  const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+  const ProductCard = ({ product, setIsModalOpen, setSelectedProduct }) => {
     const [isHovered, setIsHovered] = useState(false);
     const [switchButton, setSwitchButton] = useState(false);
 
     const handleMouseEnter = () => {
       setIsHovered(true);
+      setSelectedProduct(product);
       setTimeout(function(){
         setSwitchButton(true);
       }, 250);
@@ -47,12 +40,14 @@ interface ProductCardProps {
         />
         <div className='bg-white border-t-solid border-t border-midnight p-3'>
           <div className={`rotating-div ${isHovered ? 'rotate-div' : ''}`}>
-            {!switchButton && <h4 className='text-midnight rotating-text font-mono'>{product.title}</h4>}
-            {switchButton && <Button/>}
+            {!switchButton && 
+              <h4 className='text-midnight rotating-text font-mono'>{product.title} €{parseFloat(product.variants[0].prices[0].amount)/100}</h4>
+            }
+            {switchButton && <Button setIsModalOpen={setIsModalOpen}/>}
           </div>
         </div>
       </div>
     );
   };
   
-  export default ProductCard;
+  export default ProductCard
