@@ -29,8 +29,9 @@ const ProductShow = ({ isModalOpen, setIsModalOpen, product }) => {
 						<span onClick={closeModal} className='cursor-pointer text-[20px] font-bold text-midnight'>x</span>
 					</div>
 					<div className='md:grid md:grid-cols-5'>
-						<div className='col-span-2'>
+						<div className='col-span-2 max-sm:mb-5'>
 							<img
+								className='max-sm:mx-auto'
 								src={product.thumbnail}
 								alt={product.title}
 								width={320}
@@ -40,12 +41,31 @@ const ProductShow = ({ isModalOpen, setIsModalOpen, product }) => {
 						<div className='col-span-3'>
 							<h2 className='font-bold text-[18px] border-b border-b-solid border-midnight mb-2'>{product.title}</h2>
 							<p>{product.description}</p>
-							<select className="block w-full py-2 my-5 border border-midnight rounded-md focus:outline-none focus:border-midnight">
-								{product.variants.map((variant) => (
-									<option value={variant.title}>{variant.title}</option>
-								))}
-							</select>
+							<div>
+								<p className='mt-3'>Size</p>
+								<select className="block w-full py-2 border border-midnight rounded-md focus:outline-none focus:border-midnight">
+									{[...new Set(product.options[0].values.map(size => size.value))].map((size) => (
+										<option value={size}>{size}</option>
+									))}
+								</select>
+							</div>
+							{product.options.length == 2 ?
+								<div>
+									<p className='mt-3'>Color</p>
+									<select className="block w-full py-2 border border-midnight rounded-md focus:outline-none focus:border-midnight">
+										{[...new Set(product.options[1].values.map(color => color.value))].map((color) => (
+											<option value={color}>{color}</option>
+										))}
+									</select>
+								</div> : ''
+							}
 							<Counter />
+							<div className='grid mt-5'>
+								<button
+									className="bg-midnight text-light-gray p-2 items-center rounded">
+										Add to cart
+								</button>
+							</div>
 						</div>
 					</div>
 				</div>

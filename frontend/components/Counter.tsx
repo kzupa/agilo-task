@@ -16,7 +16,7 @@ const Counter = () => {
   };
 
   return (
-    <div className="flex items-center justify-center">
+    <div className="mt-5 flex items-center justify-center">
       <button
         className="px-4 py-2 rounded-md bg-midnight text-white"
         onClick={decrement}
