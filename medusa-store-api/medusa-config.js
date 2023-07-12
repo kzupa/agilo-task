@@ -80,7 +80,10 @@ const projectConfig = {
 
 /** @type {import('@medusajs/medusa').ConfigModule} */
 module.exports = {
-  projectConfig,
+   projectConfig: {
+    database_type: "postgres",
+    database_url: `postgres://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@${process.env.DATABASE_URL}`
+  },
   plugins,
   modules,
 };
