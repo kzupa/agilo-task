@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Counter } from '@/components';
+import { Counter, ProductPrice } from '@/components';
 
 const ProductShow = ({ isModalOpen, setIsModalOpen, product }) => {
 	const closeModal = () => {
@@ -40,6 +40,9 @@ const ProductShow = ({ isModalOpen, setIsModalOpen, product }) => {
 						</div>
 						<div className='col-span-3'>
 							<h2 className='font-bold text-[18px] border-b border-b-solid border-midnight mb-2'>{product.title}</h2>
+							<div className='py-1 font-bold text-[18px]'>
+								<ProductPrice product={product} showIcon={true} />
+							</div>
 							<p>{product.description}</p>
 							<div>
 								<p className='mt-3'>Size</p>
