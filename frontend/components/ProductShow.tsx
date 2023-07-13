@@ -10,12 +10,12 @@ const ProductShow = ({ isModalOpen, setIsModalOpen, product }) => {
 
 	useEffect(() =>{
 		const bodyElement = document.body;
-    bodyElement.style.overflow = 'hidden'; /* Highlighted change: Apply overflow: hidden style to prevent scrolling */
-    bodyElement.classList.add('modal-open'); /* Highlighted change: Add the CSS class to the body element */
+    bodyElement.style.overflow = 'hidden';
+    bodyElement.classList.add('modal-open');
 
     return () => {
-      bodyElement.style.overflow = 'unset'; /* Highlighted change: Reset the overflow style */
-      bodyElement.classList.remove('modal-open'); /* Highlighted change: Remove the CSS class when the modal is closed */
+      bodyElement.style.overflow = 'unset';
+      bodyElement.classList.remove('modal-open');
     };
   }, [isModalOpen]);
 
