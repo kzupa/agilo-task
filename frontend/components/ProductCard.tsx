@@ -53,4 +53,4 @@ import { Button, ProductPrice } from '@/components';
     );
   };
   
-  export default ProductCard
+  export default ProductCard;

@@ -1,6 +1,6 @@
 'use client';
 
-import React, {useState} from 'react'
+import React, {useState} from 'react';
 import { faExchange } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -39,4 +39,4 @@ const ProductPrice = ({product, showIcon}) => {
   )
 }
 
-export default ProductPrice
+export default ProductPrice;

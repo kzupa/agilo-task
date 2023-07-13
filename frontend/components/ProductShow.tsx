@@ -77,4 +77,4 @@ const ProductShow = ({ isModalOpen, setIsModalOpen, product }) => {
   );
 };
 
-export default ProductShow
+export default ProductShow;

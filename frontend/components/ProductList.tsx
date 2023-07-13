@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState, useEffect } from 'react'
-import { ProductCard, ProductShow, Filter } from '@/components'
+import React, { useState, useEffect } from 'react';
+import { ProductCard, ProductShow, Filter } from '@/components';
 
 const ProductList = ({products, collections}) => {
 	const [filteredProducts, setFilteredProducts] = useState(products);
@@ -41,4 +41,4 @@ const ProductList = ({products, collections}) => {
 	)
 }
 
-export default ProductList
+export default ProductList;
