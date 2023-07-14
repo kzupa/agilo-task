@@ -6,6 +6,7 @@ import ProductShow from './ProductShow';
 import ProductList from './ProductList';
 import Counter from './Counter';
 import Filter from './Filter';
+import ProductPrice from './ProductPrice';
 
 
 export {
@@ -16,5 +17,6 @@ export {
   ProductShow,
   ProductList,
   Counter,
-  Filter
+  Filter,
+  ProductPrice
 }

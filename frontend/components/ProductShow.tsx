@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Counter } from '@/components';
+import { Counter, ProductPrice } from '@/components';
 
 const ProductShow = ({ isModalOpen, setIsModalOpen, product }) => {
 	const closeModal = () => {
@@ -10,12 +10,12 @@ const ProductShow = ({ isModalOpen, setIsModalOpen, product }) => {
 
 	useEffect(() =>{
 		const bodyElement = document.body;
-    bodyElement.style.overflow = 'hidden'; /* Highlighted change: Apply overflow: hidden style to prevent scrolling */
-    bodyElement.classList.add('modal-open'); /* Highlighted change: Add the CSS class to the body element */
+    bodyElement.style.overflow = 'hidden';
+    bodyElement.classList.add('modal-open');
 
     return () => {
-      bodyElement.style.overflow = 'unset'; /* Highlighted change: Reset the overflow style */
-      bodyElement.classList.remove('modal-open'); /* Highlighted change: Remove the CSS class when the modal is closed */
+      bodyElement.style.overflow = 'unset';
+      bodyElement.classList.remove('modal-open');
     };
   }, [isModalOpen]);
 
@@ -40,6 +40,9 @@ const ProductShow = ({ isModalOpen, setIsModalOpen, product }) => {
 						</div>
 						<div className='col-span-3'>
 							<h2 className='font-bold text-[18px] border-b border-b-solid border-midnight mb-2'>{product.title}</h2>
+							<div className='py-1 font-bold text-[18px]'>
+								<ProductPrice product={product} showIcon={true} />
+							</div>
 							<p>{product.description}</p>
 							<div>
 								<p className='mt-3'>Size</p>
@@ -74,4 +77,4 @@ const ProductShow = ({ isModalOpen, setIsModalOpen, product }) => {
   );
 };
 
-export default ProductShow
+export default ProductShow;

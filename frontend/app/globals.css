@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('./styles/main.css');
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 241, 241, 241;
@@ -24,30 +26,4 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-}
-
-
-.rotating-div{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.4s ease-in-out;
-}
-
-.rotate-div {
-  transform: rotateY(180deg);
-}
-
-.rotated-button {
-  transform: rotateY(180deg);
-  padding-right: auto;
-}
-
-.rotating-text{
-  padding: 8px 0;
-}
-
-.modal-wrapper{
-  background-color: rgba(50, 50, 50, 0.4);
 }
